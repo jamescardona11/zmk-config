@@ -59,6 +59,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left_bkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <16 15>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -77,7 +86,7 @@
 &as TILDE GRAVE  &kp Q           &kp W           &kp E               &kp R             &kp T                                         &kp Y            &kp U              &kp I                &kp O                    &kp P                &kp MINUS
 &kp CAPSLOCK     &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F  &kp G                                         &hm RIGHT_GUI H  &hm RIGHT_SHIFT J  &hm RIGHT_CONTROL K  &hm RIGHT_ALT L          &as COLON SEMICOLON  &as DOUBLE_QUOTES SINGLE_QUOTE
 &kp LSHFT        &kp Z           &kp X           &kp C               &kp V             &kp B             &kp C_MUTE     &none        &kp N            &kp M              &as LESS_THAN COMMA  &as GREATER_THAN PERIOD  &as QUESTION SLASH   &kp RSHFT
-                                 &kp TAB         &kp LALT            &kp LCTRL         &hm LEFT_GUI TAB  &lt 2 SPACE    &lt 1 SPACE  &lt 3 ENTER      &kp DELETE         &kp RALT             &kp RCTRL
+                                 &kp LEFT_GUI    &kp LEFT_CONTROL    &kp LEFT_ALT      &hm LEFT_GUI TAB  &lt 2 SPACE    &lt 1 SPACE  &lt 3 ENTER      &kp DELETE         &kp RALT             &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -136,11 +145,11 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none  &none  &none  &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none  &none  &none  &none  &none
-&none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &none  &none  &none  &none  &none
-                                    &none            &none            &none            &none            &none              &none  &none  &none  &none  &none
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                &none              &none                   &none                    &none                   &none  &none
+&ext_power EP_TOG  &kp LG(Q)     &trans        &trans        &trans        &trans                                      &none              &kp LS(LA(LEFT_ARROW))  &kp LS(RA(RIGHT_ARROW))  &kp LS(RA(DOWN_ARROW))  &none  &none
+&none              &kp LG(A)     &kp LG(S)     &kp LG(D)     &kp LG(F)     &kp LEFT_BRACKET                            &kp RIGHT_BRACKET  &kp RG(RS(LEFT_ARROW))  &kp RG(RS(RIGHT_ARROW))  &none                   &none  &none
+&none              &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LEFT_BRACE    &rgb_ug RGB_TOG    &none  &kp RIGHT_BRACE    &none                   &none                    &none                   &none  &none
+                                 &none         &none         &none         &none             &none              &none  &none              &none                   &none                    &none
             >;
         };
     };
